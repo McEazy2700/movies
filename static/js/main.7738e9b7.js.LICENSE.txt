@@ -1,0 +1,141 @@
+/*!
+          * The buffer module from node.js, for the browser.
+          *
+          * @author   Feross Aboukhadijeh <https://feross.org>
+          * @license  MIT
+          */
+
+/*!
+      * Determine if an object is a Buffer
+      *
+      * @author   Feross Aboukhadijeh <https://feross.org>
+      * @license  MIT
+      */
+
+/*!
+      * range-parser
+      * Copyright(c) 2012-2014 TJ Holowaychuk
+      * Copyright(c) 2015-2016 Douglas Christopher Wilson
+      * MIT Licensed
+      */
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+
+/*! bittorrent-protocol. MIT License. WebTorrent LLC <https://webtorrent.io/opensource> */
+
+/*! blob-to-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+/*! cache-chunk-store. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+/*! create-torrent. MIT License. WebTorrent LLC <https://webtorrent.io/opensource> */
+
+/*! https://mths.be/punycode v1.4.1 by @mathias */
+
+/*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+/*! immediate-chunk-store. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+/*! lt_donthave. MIT License. WebTorrent LLC <https://webtorrent.io/opensource> */
+
+/*! multistream. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+/*! parse-torrent. MIT License. WebTorrent LLC <https://webtorrent.io/opensource> */
+
+/*! queue-microtask. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
+
+/*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+/*! simple-concat. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+/*! simple-peer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+/*! simple-websocket. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+/*! stream-to-blob. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+/*! stream-with-known-length-to-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+/*! torrent-discovery. MIT License. WebTorrent LLC <https://webtorrent.io/opensource> */
+
+/*! torrent-piece. MIT License. WebTorrent LLC <https://webtorrent.io/opensource> */
+
+/*! ut_metadata. MIT License. WebTorrent LLC <https://webtorrent.io/opensource> */
+
+/*! webtorrent. MIT License. WebTorrent LLC <https://webtorrent.io/opensource> */
+
+/**
+ * @license React
+ * react-dom.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * react.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * scheduler.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * React Router DOM v6.3.0
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+/**
+ * React Router v6.3.0
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
