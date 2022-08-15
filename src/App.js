@@ -1,24 +1,20 @@
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import Movies from './site/movies/Movies';
+import MovieDetail from './pages/movieDetail/MovieDetail';
 import './App.css';
+import Navigation from './components/navBar/Navigation';
+import { useState } from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    const [search, setSearch] = useState('')
+    return (
+    <BrowserRouter className="App">
+      <Navigation setSearch={setSearch}/>
+      <Routes>
+        <Route path='/' element={<Movies search={search}/>} />
+        <Route path='/:movieId' element={<MovieDetail />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -1,0 +1,33 @@
+.movie__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    max-width: 230px;
+}
+
+
+.movie__card-image {
+    max-width: 230px;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+
+.movie__card-image img {
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.movie__card-text {
+    width: 100%;
+}
+
+.movie__card-text p {
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}

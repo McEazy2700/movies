@@ -1,0 +1,43 @@
+.navbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    background: var(--background-color);
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar a {
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+}
+
+.nav__brand {
+    display: flex;
+    gap: 0rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__brand-image {
+    width: 70px;
+}
+
+.nav__brand-image img {
+    width: 100%;
+}
+
+.nav__brand-tex {
+    font-weight: 800;
+    display: flex;
+    font-family: var(--accent-font);
+    font-size: 1.7rem;
+}

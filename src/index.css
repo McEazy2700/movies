@@ -1,13 +1,15 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url('http://fonts.cdnfonts.com/css/foco-trial');
+@import url('http://fonts.cdnfonts.com/css/zacbel-x');
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --background-color: #202329;
+  --font-family: 'Foco Trial', sans-serif;
+  --font-color: #cfd3c2;
+  --fade-color: #808080;
+  --play-button: radial-gradient(#f28812 0%, #f2430c 30%,  #b61111 80%);
+  --download-icon: #26a82f;
+  --accent-color: #1048e3;
+  --transition: all 0.3s ease;
+  --accent-font: font-family: 'Zacbel X', sans-serif;
+  --accent-font-mediun: font-family: 'Zacbel X Medium', sans-serif;
 }
