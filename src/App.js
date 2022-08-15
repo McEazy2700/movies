@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter className="App" basename={process.env.PUBLIC_URL}>
       <Navigation setSearch={setSearch}/>
       <Routes>
-        <Route path='/' element={<Movies search={search}/>} />
+        <Route exact={true} path='/' element={<Movies search={search}/>} />
         <Route path='/:movieId' element={<MovieDetail />} />
       </Routes>
     </BrowserRouter>
