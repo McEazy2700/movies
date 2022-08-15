@@ -8,7 +8,7 @@ import { useState } from 'react';
 function App() {
     const [search, setSearch] = useState('')
     return (
-    <BrowserRouter className="App">
+    <BrowserRouter className="App" basename={process.env.PUBLIC_URL}>
       <Navigation setSearch={setSearch}/>
       <Routes>
         <Route path='/' element={<Movies search={search}/>} />
