@@ -61,7 +61,7 @@ const Movies = ({ search }) => {
         hasMore={page.hasMore}
         className="movies__list">
             {movies.map(movie=>{ return (
-                <Link key={`/${movie.id}`} className='card__link' to={`/${movie.id}`}>
+                <Link key={movie.id} className='card__link' to={`/${movie.id}`}>
                     <MovieCard movie={movie} />
                 </Link>
             )})}
