@@ -12,7 +12,7 @@ function App() {
       <Navigation setSearch={setSearch}/>
       <Routes>
         <Route exact={true} path='/' element={<Movies search={search}/>} />
-        <Route path='/:movieId' element={<MovieDetail />} />
+        <Route exact path='/movie/:movieId' element={<MovieDetail />} />
       </Routes>
     </BrowserRouter>
   );
