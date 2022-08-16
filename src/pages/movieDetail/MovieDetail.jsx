@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { FaPlay, FaDownload } from 'react-icons/fa'
-import { useParams, Link } from 'react-router-dom'
+import { FaPlay } from 'react-icons/fa'
+import { useParams } from 'react-router-dom'
 import VideoQuality from '../../components/card/VideoQuality'
 import getTorrent from '../../utils/getTorrent'
 import { getImageURL, getMovie } from '../../utils/getURL'
+import Star from '../../assets/star.png'
+import Blue from '../../assets/blue.png'
 import './MovieDetail.css'
 
 const MovieDetail = () => {
@@ -42,8 +44,9 @@ const MovieDetail = () => {
                 })
         })})
 
-        
     },[isDownloading])
+    console.log({movie})
+    console.log({yts: yts.movie})
     const movieStyle = {
         backgroundImage: `url('${getImageURL(movie.backdrop_path, 'original')}')`,
         backgroundSize: 'cover',
@@ -107,18 +110,49 @@ const MovieDetail = () => {
             {isDownloading && <div id="player"  className='movie__details-video'>
                 <video controls id="player" src={torrentURL}></video>
             </div>}
-            <div className="movie__details-description">
-                <p>{movie.overview}</p>
-            </div>
-            <div className="movie__details-long_images">
-                <div className="movie__detail-image">
-                    <img src={yts.movie.medium_screenshot_image1} alt={movie.title} />
+            <div className="movie__detail-box">
+                <div className="movie__detail-box_text">
+                    <div className="movie__rattings">
+                        <div className="tmdb_vote">
+                            <div className="tmdb_vote-img">
+                                <img src={Blue} alt="" />
+                            </div>
+                            <div className="tmdb_vote-vote">
+                                <h5>TMDb Vote</h5>
+                                <h4><strong>{yts.torrents.length>0 && movie.vote_average.toFixed(0)}</strong> / 10</h4>
+                            </div>
+                        </div>
+                        <div className="imbd_rating">
+                            <div className="imdb_rating-img">
+                                <img src={Star} alt="" />
+                            </div>
+                            <div className="imdb_rating-rating">
+                                <h5>IMDb Rating</h5>
+                                <h4><strong>{yts.movie.rating}</strong> / 10</h4>
+                            </div>
+                        </div>
+                        <div className="mpa_rating">
+                            <h2>{yts.movie.mpa_rating}</h2>
+                        </div>
+                        <div className="movie_year">
+                            <h3>{yts.movie.year}</h3>
+                        </div>
+                    </div>
+                    <div className="movie__details-description">
+                        <h2>Synopsis</h2>
+                        <p>{movie.overview}</p>
+                    </div>
                 </div>
-                <div className="movie__detail-image">
-                    <img src={yts.movie.medium_screenshot_image2} alt={movie.title} />
-                </div>
-                <div className="movie__detail-image">
-                    <img src={yts.movie.medium_screenshot_image3} alt={movie.title} />
+                <div className="movie__details-long_images">
+                    <div className="movie__detail-image">
+                        <img src={yts.movie.medium_screenshot_image1} alt={movie.title} />
+                    </div>
+                    <div className="movie__detail-image">
+                        <img src={yts.movie.medium_screenshot_image2} alt={movie.title} />
+                    </div>
+                    <div className="movie__detail-image">
+                        <img src={yts.movie.medium_screenshot_image3} alt={movie.title} />
+                    </div>
                 </div>
             </div>
         </div>

@@ -9,7 +9,7 @@
 
 
 .movie__card-image {
-    max-width: 230px;
+    width: 100%;
     border-radius: 5px;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -30,4 +30,15 @@
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+}
+
+@media screen and (max-width: 500px) {
+    .movie__card {
+        max-width: 150px;
+    }
+    @media screen and (max-width: 350px) {
+        .movie__card {
+            max-width: 120px;
+        }
+    }
 }

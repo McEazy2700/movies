@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { getImageURL } from "../../utils/getURL";
 import './MovieCard.css'
 const MovieCard = ({ movie }) => {

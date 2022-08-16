@@ -2,10 +2,11 @@
 @import url('http://fonts.cdnfonts.com/css/zacbel-x');
 
 :root {
-  --background-color: #202329;
+  --background-color: #141518;
+  --background-color-darker: #17181a;
   --font-family: 'Foco Trial', sans-serif;
   --font-color: #cfd3c2;
-  --fade-color: #808080;
+  --fade-color: #b6b6b6;
   --play-button: radial-gradient(#f28812 0%, #f2430c 30%,  #b61111 80%);
   --download-icon: #26a82f;
   --accent-color: #1048e3;
