@@ -24,7 +24,6 @@ function App() {
         <Route exact={true} path=':movieId' element={<MovieDetail />} />
       </Routes>
     </BrowserRouter>
-    
   );
 }
 

@@ -108,7 +108,7 @@ const MovieDetail = () => {
         </div>
         <div className="movie__details-long">
             {isDownloading && <div id="player"  className='movie__details-video'>
-                <video controls id="player" src={torrentURL}></video>
+                <video width='100%' controls id="player" src={torrentURL}></video>
             </div>}
             <div className="movie__detail-box">
                 <div className="movie__detail-box_text">
