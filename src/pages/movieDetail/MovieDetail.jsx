@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import { FaPlay } from 'react-icons/fa'
 import { useParams } from 'react-router-dom'
 import VideoQuality from '../../components/card/VideoQuality'
 import getTorrent from '../../utils/getTorrent'
-import { getImageURL, getMovie } from '../../utils/getURL'
+import YouTube from 'react-youtube'
+import { getImageURL, getMovie, getYouTube } from '../../utils/getURL'
 import Star from '../../assets/star.png'
 import Blue from '../../assets/blue.png'
 import './MovieDetail.css'
@@ -12,6 +14,8 @@ const MovieDetail = () => {
     const loadjs = require('loadjs')
     const [movie, setMovie] = useState({})
     const [genres, setGenres] = useState([])
+    const [youTube, setYouTube] = useState('')
+    const videoRef = useRef()
     const [classes, setClasses] = useState({
         qualityClass: 'video__quality fade__out',
         applogyClass: 'video__appology fade__out'
@@ -42,6 +46,7 @@ const MovieDetail = () => {
                     movie: movie,
                     torrents: movie.torrents || []
                 })
+                setYouTube(getYouTube(movie.yt_trailer_code))
         })})
 
     },[isDownloading])
@@ -75,6 +80,26 @@ const MovieDetail = () => {
                 applogyClass: 'video__appology fade__in'
             })
         }
+    }
+
+    const isLaptop = useMediaQuery({
+        query: '(max-width: 1024px)'
+    })
+
+    const isTablet = useMediaQuery({
+        query: '(max-width: 770px)'
+    })
+    const isLargeMobile = useMediaQuery({
+        query: '(max-width: 430px)'
+    })
+    const isSmallMobile = useMediaQuery({
+        query: '(max-width: 380px)'
+    })
+    
+    const options = {
+        width: '100% !important',
+        height: isSmallMobile ? '170px' : isLargeMobile ? '190px' : isTablet ? '360px' : isLaptop ? '485px' : '670px',
+        controls: 'true'
     }
   return (
     <div className='movie'>
@@ -142,6 +167,9 @@ const MovieDetail = () => {
                         <h2>Synopsis</h2>
                         <p>{movie.overview}</p>
                     </div>
+                </div>
+                <div ref={videoRef} className="movie__youtube-trailer">
+                    <YouTube videoId={yts.movie.yt_trailer_code} opts={options}/>
                 </div>
                 <div className="movie__details-long_images">
                     <div className="movie__detail-image">

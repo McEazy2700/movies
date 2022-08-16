@@ -21,3 +21,8 @@ export const getMovie = (apiKey, path) => {
     const url = `${theMovieDBURL}${path}?api_key=${apiKey}&include_adult=false`
     return url
 }
+
+export const getYouTube = (code) => {
+    const url = `https://www.youtube.com/watch?v=${code}`
+    return url
+}
