@@ -1,11 +1,12 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
-import { Link, useParams, useLocation } from 'react-router-dom'
+import { Link, useParams, useLocation, useNavigate } from 'react-router-dom'
 import MovieCard from '../../components/card/MovieCard'
-import { getGenreMoviesURL, getGenresURL } from '../../utils/getURL'
+import { getGenreMoviesURL } from '../../utils/getURL'
 
-const MovieCategory = ({ apiKey }) => {
+const MovieCategory = ({ apiKey, search }) => {
+    const redirect = useNavigate()
     const genre = useParams()
     const location = useLocation()
     const moviesURL = getGenreMoviesURL(apiKey, genre.genreId)
@@ -13,6 +14,7 @@ const MovieCategory = ({ apiKey }) => {
     const [nextPage, setNextPage] = useState(1)
     const [movies, setMovies] = useState([])
     useEffect(()=>{
+        search != '' && redirect('/', {replace: true, state: []})
         axios.get(moviesURL)
         .then(movies=>{
             const data = movies.data
@@ -20,7 +22,7 @@ const MovieCategory = ({ apiKey }) => {
             setHasMorePages(data.page < data.total_pages ? true : false)
             setNextPage(thisPage=> thisPage + 1)
         })
-    },[location])
+    },[location, search])
     
     const getNext = async ()=> {
         const getMoreMovies = async ()=>{

@@ -12,7 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-const SideBar = ({ apiKey, isOpen, setIsOpen }) => {
+const SideBar = ({ apiKey, isOpen, setIsOpen, search }) => {
     const redirect = useNavigate()
     const [genres, setGenres] = useState([])
 

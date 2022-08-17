@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import { FaPlay } from 'react-icons/fa'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import VideoQuality from '../../components/card/VideoQuality'
 import getTorrent from '../../utils/getTorrent'
 import YouTube from 'react-youtube'
@@ -11,7 +11,8 @@ import Blue from '../../assets/blue.png'
 import './MovieDetail.css'
 import Rating from '../../components/rating/Rating'
 
-const MovieDetail = ({ apiKey }) => {
+const MovieDetail = ({ apiKey, search }) => {
+    const redirect = useNavigate()
     const loadjs = require('loadjs')
     const [movie, setMovie] = useState({})
     const [genres, setGenres] = useState([])
@@ -31,6 +32,7 @@ const MovieDetail = ({ apiKey }) => {
     const axios = require('axios')
     const query = useParams()
     useEffect(()=>{
+        search != '' && redirect('/', {replace: true, state: []})
         const movieURL = getMovie(apiKey, query.movieId)
         axios.get(movieURL)
         .then(data => {
@@ -48,7 +50,7 @@ const MovieDetail = ({ apiKey }) => {
                 })
         })})
 
-    },[isDownloading])
+    },[isDownloading, search])
     const movieStyle = {
         backgroundImage: `url('${getImageURL(movie.backdrop_path, 'original')}')`,
         backgroundSize: 'cover',
