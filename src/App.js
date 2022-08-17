@@ -14,7 +14,16 @@ function App() {
     const apiKey = process.env.REACT_APP_MY_API_KEY
     return (
     // Development
-    <BrowserRouter className="App">
+    // <BrowserRouter className="App" >
+    //   <Navigation isOpen={sideBarIsOpen} setIsOpen={setSideBarIsOpen} setSearch={setSearch}/>
+    //   <SideBar isOpen={sideBarIsOpen} apiKey={apiKey} setIsOpen={setSideBarIsOpen}/>
+    //   <Routes>
+    //     <Route exact path='/' element={<Movies search={search} apiKey={apiKey}/>} />
+    //     <Route exact path='/:movieId' element={<MovieDetail apiKey={apiKey} />} />
+    //     <Route exact path='/genre/:genreName/:genreId' element={<MovieCategory apiKey={apiKey} />} />
+    //   </Routes>
+    // </BrowserRouter>
+    <BrowserRouter className="App" basename={process.env.PUBLIC_URL}>
       <Navigation isOpen={sideBarIsOpen} setIsOpen={setSideBarIsOpen} setSearch={setSearch}/>
       <SideBar isOpen={sideBarIsOpen} apiKey={apiKey} setIsOpen={setSideBarIsOpen}/>
       <Routes>

@@ -76,7 +76,7 @@
     width: 95%;
     padding: 0.5rem 1rem;
     color: var(--fade-color);
-    background: transparent;
+    background: var(--background-color-darker);
     border: 0;
     outline: 0;
     font-family: inherit;
