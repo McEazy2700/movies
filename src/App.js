@@ -23,6 +23,8 @@ function App() {
     //     <Route exact path='/genre/:genreName/:genreId' element={<MovieCategory apiKey={apiKey} />} />
     //   </Routes>
     // </BrowserRouter>
+    
+    //Production
     <BrowserRouter className="App" basename={process.env.PUBLIC_URL}>
       <Navigation isOpen={sideBarIsOpen} setIsOpen={setSideBarIsOpen} setSearch={setSearch}/>
       <SideBar isOpen={sideBarIsOpen} apiKey={apiKey} setIsOpen={setSideBarIsOpen}/>
@@ -32,15 +34,6 @@ function App() {
         <Route exact path='genre/:genreName/:genreId' element={<MovieCategory apiKey={apiKey} />} />
       </Routes>
     </BrowserRouter>
-    
-    //Production
-    // <BrowserRouter className="App" basename={process.env.PUBLIC_URL}>
-    //   <Navigation setSearch={setSearch}/>
-    //   <Routes>
-    //     <Route exact={true} path='/' element={<Movies search={search} apiKey={apiKey}/>} />
-    //     <Route exact={true} path=':movieId' element={<MovieDetail />} />
-    //   </Routes>
-    // </BrowserRouter>
   );
 }
 
