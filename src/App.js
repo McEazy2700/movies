@@ -28,8 +28,8 @@ function App() {
       <SideBar isOpen={sideBarIsOpen} apiKey={apiKey} setIsOpen={setSideBarIsOpen}/>
       <Routes>
         <Route exact path='/' element={<Movies search={search} apiKey={apiKey}/>} />
-        <Route exact path='/:movieId' element={<MovieDetail apiKey={apiKey} />} />
-        <Route exact path='/genre/:genreName/:genreId' element={<MovieCategory apiKey={apiKey} />} />
+        <Route exact path=':movieId' element={<MovieDetail apiKey={apiKey} />} />
+        <Route exact path='genre/:genreName/:genreId' element={<MovieCategory apiKey={apiKey} />} />
       </Routes>
     </BrowserRouter>
     
