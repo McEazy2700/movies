@@ -1,20 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import { FaPlay } from 'react-icons/fa'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import VideoQuality from '../../components/card/VideoQuality'
 import getTorrent from '../../utils/getTorrent'
 import YouTube from 'react-youtube'
-import { getImageURL, getMovie, getYouTube } from '../../utils/getURL'
+import { getImageURL, getMovie } from '../../utils/getURL'
 import Star from '../../assets/star.png'
 import Blue from '../../assets/blue.png'
 import './MovieDetail.css'
+import Rating from '../../components/rating/Rating'
 
-const MovieDetail = () => {
+const MovieDetail = ({ apiKey }) => {
     const loadjs = require('loadjs')
     const [movie, setMovie] = useState({})
     const [genres, setGenres] = useState([])
-    const [youTube, setYouTube] = useState('')
     const videoRef = useRef()
     const [classes, setClasses] = useState({
         qualityClass: 'video__quality fade__out',
@@ -31,7 +31,7 @@ const MovieDetail = () => {
     const axios = require('axios')
     const query = useParams()
     useEffect(()=>{
-        const movieURL = getMovie(process.env.REACT_APP_MY_API_KEY, query.movieId)
+        const movieURL = getMovie(apiKey, query.movieId)
         axios.get(movieURL)
         .then(data => {
             const movie = data.data
@@ -46,12 +46,9 @@ const MovieDetail = () => {
                     movie: movie,
                     torrents: movie.torrents || []
                 })
-                setYouTube(getYouTube(movie.yt_trailer_code))
         })})
 
     },[isDownloading])
-    console.log({movie})
-    console.log({yts: yts.movie})
     const movieStyle = {
         backgroundImage: `url('${getImageURL(movie.backdrop_path, 'original')}')`,
         backgroundSize: 'cover',
@@ -125,7 +122,9 @@ const MovieDetail = () => {
                     <h4>{movie.runtime} mins</h4>
                     <div className="movie__genres">
                         {genres.map(genre => {
-                            return <div key={genre.id} className="genre">{genre.name}</div>
+                            return <Link key={genre.id} to={`/genre/${genre.name}/${genre.id}`}>
+                                <div className="genre">{genre.name}</div>
+                                </Link>
                         })}
                     </div>
                 </div>
@@ -138,24 +137,10 @@ const MovieDetail = () => {
             <div className="movie__detail-box">
                 <div className="movie__detail-box_text">
                     <div className="movie__rattings">
-                        <div className="tmdb_vote">
-                            <div className="tmdb_vote-img">
-                                <img src={Blue} alt="" />
-                            </div>
-                            <div className="tmdb_vote-vote">
-                                <h5>TMDb Vote</h5>
-                                <h4><strong>{yts.torrents.length>0 && movie.vote_average.toFixed(0)}</strong> / 10</h4>
-                            </div>
-                        </div>
-                        <div className="imbd_rating">
-                            <div className="imdb_rating-img">
-                                <img src={Star} alt="" />
-                            </div>
-                            <div className="imdb_rating-rating">
-                                <h5>IMDb Rating</h5>
-                                <h4><strong>{yts.movie.rating}</strong> / 10</h4>
-                            </div>
-                        </div>
+                        <Rating img={Blue} 
+                            rating={yts.torrents.length>0 ? movie.vote_average.toFixed(0) : 0 }
+                            text={'TMDb Vote'} />
+                        <Rating img={Star} rating={yts.movie.rating} text='IMDb Rating' />
                         <div className="mpa_rating">
                             <h2>{yts.movie.mpa_rating}</h2>
                         </div>

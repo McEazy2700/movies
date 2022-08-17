@@ -30,3 +30,17 @@ a {
   transform: translateY(0);
   opacity: 1;
 }
+
+.slide__outX{
+  transform: translateX(-80%);
+}
+
+.slide__inX{
+  transform: translateX(0);
+}
+
+@media screen and (max-width: 550px) {
+  .slide__outX{
+    transform: translateX(-100%);
+  }
+}

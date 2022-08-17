@@ -6,7 +6,7 @@ import axios from 'axios'
 import './Movies.css'
 import getURL from '../../utils/getURL'
 
-const Movies = ({ search }) => {
+const Movies = ({ search, apiKey }) => {
     const [nextPage, setNextPage] = useState(1)
     const [page, setPage] = useState({
         currentPage: 0,
@@ -18,7 +18,7 @@ const Movies = ({ search }) => {
     
     useEffect(()=>{
         const getMovies = async ()=>{
-            const moviesURL = getURL(process.env.REACT_APP_MY_API_KEY, 'popular', search)
+            const moviesURL = getURL(apiKey, 'popular', search)
             axios.get(moviesURL)
             .then(data => {
                 const recievedData = data.data
@@ -38,7 +38,7 @@ const Movies = ({ search }) => {
     
     const getNext = async ()=> {
         const getMoreMovies = async ()=>{
-            const moviesURL = `${getURL(process.env.REACT_APP_MY_API_KEY, 'popular', search)}` + `&page=${nextPage}`
+            const moviesURL = `${getURL(apiKey, 'popular', search)}` + `&page=${nextPage}`
             axios.get(moviesURL)
             .then(data=>{
                 const recievedData = data.data
